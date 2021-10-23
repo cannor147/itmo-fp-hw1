@@ -34,5 +34,5 @@ isWeekend _ = False
 
 -- | Computes the number of days until the next Friday.
 daysToParty :: Day -> Natural
-daysToParty Thursday = 1
+daysToParty Friday = 0
 daysToParty day = daysToParty (nextDay day) + 1
