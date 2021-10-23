@@ -1,9 +1,9 @@
-module HW1.T4 
+module HW1.T4
   ( tfoldr
   , treeToList
   ) where
 
-import HW1.T3 (Tree(..))
+import           HW1.T3 (Tree (..))
 
 tfoldr :: (a -> b -> b) -> b -> Tree a -> b
 tfoldr _ i Leaf             = i

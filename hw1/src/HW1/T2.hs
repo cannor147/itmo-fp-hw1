@@ -1,4 +1,4 @@
-module HW1.T2 
+module HW1.T2
   ( N(..)
   , nplus
   , nmult
@@ -8,7 +8,7 @@ module HW1.T2
   , nToNum
   ) where
 
-import GHC.Num (Natural)
+import           GHC.Num (Natural)
 
 data N = Z | S N
   deriving Show
@@ -17,10 +17,10 @@ nplus :: N -> N -> N
 nplus Z     x = x
 nplus (S x) y = S (nplus x y)
 
-nmult :: N -> N -> N 
+nmult :: N -> N -> N
 nmult Z         _ = Z
 nmult (S Z)     x = x
-nmult (S (S x)) y = nplus (nmult (S x) y) y 
+nmult (S (S x)) y = nplus (nmult (S x) y) y
 
 nsub :: N -> N -> Maybe N
 nsub x     Z     = Just x

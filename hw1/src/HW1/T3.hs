@@ -7,7 +7,7 @@ module HW1.T3
   , tFromList
   ) where
 
-import Data.Foldable (foldl')
+import           Data.Foldable (foldl')
 
 data Tree a = Leaf | Branch Int (Tree a) a (Tree a)
   deriving Show
