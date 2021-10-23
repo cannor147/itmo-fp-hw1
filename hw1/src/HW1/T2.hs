@@ -1,4 +1,12 @@
-module HW1.T2 where
+module HW1.T2 
+  ( N(..)
+  , nplus
+  , nmult
+  , nsub
+  , ncmp
+  , nFromNatural
+  , nToNum
+  ) where
 
 import GHC.Num (Natural)
 
