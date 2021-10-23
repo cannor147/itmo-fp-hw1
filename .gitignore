@@ -4,3 +4,4 @@ dist-newstyle/
 
 .idea/
 *.iml
+stack.yaml.lock
