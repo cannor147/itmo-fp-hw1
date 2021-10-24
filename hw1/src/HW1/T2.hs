@@ -6,6 +6,10 @@ module HW1.T2
   , ncmp
   , nFromNatural
   , nToNum
+  , nEven
+  , nOdd
+  , ndiv
+  , nmod
   ) where
 
 import           GHC.Num (Natural)
@@ -40,3 +44,21 @@ nFromNatural n = S $ nFromNatural (n - 1)
 nToNum :: Num a => N -> a
 nToNum Z     = 0
 nToNum (S x) = (+ 1) $ nToNum x
+
+nEven :: N -> Bool
+nEven Z     = True
+nEven (S x) = not $ nEven x
+
+nOdd :: N -> Bool
+nOdd Z     = False
+nOdd (S x) = not $ nOdd x
+
+ndiv :: N -> N -> N
+ndiv x y = case nsub x y of
+  Nothing -> Z
+  (Just z) -> if ncmp z Z == EQ then S Z else S $ ndiv z y
+
+nmod :: N -> N -> N
+nmod x y = case nsub x y of
+  Nothing -> x
+  (Just z) -> if ncmp z Z == EQ then Z else nmod z y
