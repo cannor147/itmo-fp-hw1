@@ -8,6 +8,7 @@ module HW1.T1
 
 import           GHC.Natural (Natural)
 
+-- | Days of week.
 data Day = Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday
   deriving Show
 

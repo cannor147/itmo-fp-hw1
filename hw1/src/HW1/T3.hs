@@ -9,6 +9,7 @@ module HW1.T3
 
 import           Data.Foldable (foldl')
 
+-- | Custom tree implementation.
 data Tree a = Leaf | Branch Int (Tree a) a (Tree a)
   deriving Show
 
@@ -22,7 +23,7 @@ tdepth :: Tree a -> Int
 tdepth Leaf             = 0
 tdepth (Branch _ l _ r) = (+ 1) $ max (tdepth l) (tdepth r)
 
--- | Check if the element is in the tree, O(log n)
+-- | Check if the element is in the tree, O(log n).
 tmember :: Ord a => a -> Tree a -> Bool
 tmember _ Leaf             = False
 tmember x (Branch _ l v r) = case compare x v of
@@ -30,7 +31,7 @@ tmember x (Branch _ l v r) = case compare x v of
   EQ -> True
   GT -> tmember x r
 
--- | Insert an element into the tree and strictly increment the size of the tree, O(log n)
+-- | Insert an element into the tree and strictly increment the size of the tree, O(log n).
 tinsert' :: Ord a => a -> Tree a -> Tree a
 tinsert' x Leaf                  = Branch 1 Leaf x Leaf
 tinsert' x tree@(Branch n l v r) = case compare x v of
@@ -38,10 +39,10 @@ tinsert' x tree@(Branch n l v r) = case compare x v of
   EQ -> tree
   GT -> Branch (n + 1) l v (tinsert' x r)
 
--- | Insert an element into the tree, O(log n)
+-- | Insert an element into the tree, O(log n).
 tinsert :: Ord a => a -> Tree a -> Tree a
 tinsert x tree = if tmember x tree then tree else tinsert' x tree
 
--- | Build a tree from a list, O(n log n)
+-- | Build a tree from a list, O(n log n).
 tFromList :: Ord a => [a] -> Tree a
 tFromList = foldl' (flip tinsert) Leaf
