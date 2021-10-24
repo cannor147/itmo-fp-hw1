@@ -12,4 +12,5 @@ mcat = foldl' (foldl' mappend) mempty
 
 epart :: (Monoid a, Monoid b) => [Either a b] -> (a, b)
 epart = foldr' bimapTupleEither (mempty, mempty)
-  where bimapTupleEither y = bimap (mappend $ fromLeft mempty y) (mappend $ fromRight mempty y)
+  where
+    bimapTupleEither y = bimap (mappend $ fromLeft mempty y) (mappend $ fromRight mempty y)
