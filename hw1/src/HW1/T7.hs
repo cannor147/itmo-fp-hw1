@@ -28,7 +28,9 @@ instance (Semigroup a, Semigroup b) => Semigroup (Inclusive a b) where
 newtype DotString = DS String
 
 instance Semigroup DotString where
-  (<>) (DS a) (DS b) = DS $ concat [a, ".", b]
+  (<>) x       (DS "") = x
+  (<>) (DS "") y       = y
+  (<>) (DS a)  (DS b)  = DS $ concat [a, ".", b]
 
 instance Monoid DotString where
   mempty = DS ""
