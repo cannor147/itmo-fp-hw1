@@ -23,6 +23,7 @@ library
                        HW1.T3
                        HW1.T4
                        HW1.T5
+                       HW1.T6
   ghc-options:         -Wall
   build-depends:       base >= 4.9 && < 5
   default-language:    Haskell2010
