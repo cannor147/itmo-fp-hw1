@@ -1,9 +1,9 @@
 module HW1.T1
   ( Day(..)
-  , nextDay
   , afterDays
-  , isWeekend
   , daysToParty
+  , isWeekend
+  , nextDay
   ) where
 
 import           GHC.Natural (Natural)

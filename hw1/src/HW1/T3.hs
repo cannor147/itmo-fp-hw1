@@ -1,10 +1,10 @@
 module HW1.T3
   ( Tree(..)
-  , tsize
   , tdepth
-  , tmember
-  , tinsert
   , tFromList
+  , tinsert
+  , tmember
+  , tsize
   ) where
 
 import           Data.Foldable (foldl')

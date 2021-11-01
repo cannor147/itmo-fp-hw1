@@ -1,6 +1,6 @@
 module HW1.T6
-  ( mcat
-  , epart
+  ( epart
+  , mcat
   ) where
 
 import           Data.Bifunctor (bimap)

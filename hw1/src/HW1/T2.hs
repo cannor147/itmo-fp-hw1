@@ -1,15 +1,15 @@
 module HW1.T2
   ( N(..)
-  , nplus
-  , nmult
-  , nsub
   , ncmp
-  , nFromNatural
-  , nToNum
-  , nEven
-  , nOdd
   , ndiv
+  , nEven
+  , nFromNatural
   , nmod
+  , nmult
+  , nOdd
+  , nplus
+  , nsub
+  , nToNum
   ) where
 
 import           GHC.Num (Natural)

@@ -1,8 +1,8 @@
 module HW1.T7
-  ( ListPlus(..)
-  , Inclusive(..)
-  , DotString(..)
+  ( DotString(..)
   , Fun(..)
+  , Inclusive(..)
+  , ListPlus(..)
   ) where
 
 -- | Custom implementation of non-empty linked list.

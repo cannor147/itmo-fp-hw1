@@ -1,6 +1,6 @@
 module HW1.T5
-  ( splitOn
-  , joinWith
+  ( joinWith
+  , splitOn
   ) where
 
 import           Data.Foldable      (foldr')
